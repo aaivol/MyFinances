@@ -10,4 +10,7 @@
     <color name="BG">#ECCBB9</color>
     <color name="grey_main">#FFFAFA</color>
     <color name="secondar">#9A9A9A</color>
+    <color name="orange_txt">#E1945C</color>
+    <color name="orange_button">#FFBF90</color>
+    <color name="dark_txt">#933D0C</color>
 </resources>

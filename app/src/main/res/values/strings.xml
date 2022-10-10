@@ -6,4 +6,7 @@
     <string name="parole">Код</string>
     <string name="sign_up">Зарегистрироваться</string>
     <string name="lets_go">Вперед!</string>
+    <string name="name">Ваше Имя</string>
+    <string name="reg_parole">Код для входа</string>
+    <string name="reg_parole2">Повторите код</string>
 </resources>
