@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/TVlogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/diary" />
 
         <TextView
-            android:id="@+id/parole"
+            android:id="@+id/TVparole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
@@ -60,31 +60,31 @@
             android:textColor="@color/secondar"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            app:layout_constraintTop_toBottomOf="@+id/TVlogin" />
 
         <TextView
-            android:id="@+id/sign_up"
+            android:id="@+id/Tsign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat"
-            android:onClick="startRegActivity"
+            android:onClick="startSighUpActivity"
             android:text="@string/sign_up"
             android:textColor="@color/orange_txt"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/ETNumParole" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/BTNsign_up"
             android:layout_width="160dp"
             android:layout_height="81dp"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="30dp"
             android:backgroundTint="@color/orange_button"
             android:fontFamily="@font/montserrat"
-            android:onClick="startSecondActivity"
+            android:onClick="startMenuActivity"
             android:text="@string/lets_go"
             android:textColor="@color/dark_txt"
             android:textSize="20sp"
@@ -93,10 +93,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sign_up" />
+            app:layout_constraintTop_toBottomOf="@+id/Tsign_up" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/ETlogin"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="75dp"
@@ -107,7 +107,7 @@
             app:layout_constraintTop_toBottomOf="@+id/diary" />
 
         <EditText
-            android:id="@+id/editTextNumberPassword"
+            android:id="@+id/ETNumParole"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
@@ -115,7 +115,7 @@
             android:inputType="numberPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/ETlogin" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
