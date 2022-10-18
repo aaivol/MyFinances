@@ -8,7 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="27dp">
 
         <TextView
             android:id="@+id/diary"
@@ -17,7 +19,7 @@
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/diary"
-            android:textSize="32sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +28,12 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/username"
             android:textColor="@color/secondar"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/diary" />
 
@@ -39,12 +41,12 @@
             android:id="@+id/persname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/name"
             android:textColor="@color/secondar"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username" />
 
@@ -52,12 +54,12 @@
             android:id="@+id/parole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/reg_parole"
             android:textColor="@color/secondar"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/persname" />
 
@@ -65,12 +67,12 @@
             android:id="@+id/parole2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/reg_parole2"
             android:textColor="@color/secondar"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/parole" />
 
@@ -78,7 +80,7 @@
             android:id="@+id/editTextTextUserName"
             android:layout_width="290dp"
             android:layout_height="60dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="70dp"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -122,21 +124,18 @@
             android:id="@+id/button"
             android:layout_width="314dp"
             android:layout_height="71dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="30dp"
             android:backgroundTint="@color/orange_button"
             android:fontFamily="@font/montserrat"
             android:onClick="startMainActivity"
             android:text="@string/sign_up"
             android:textColor="@color/dark_txt"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:cornerRadius="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
-            app:layout_constraintVertical_bias="0.561" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
