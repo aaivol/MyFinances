@@ -3,7 +3,6 @@ package com.example.myfinances;
 public class MyConst {
     //database
     public static final String DATABASE_NAME = "my_finances.db";
-    public static final int VERSION = 1;
     //table users
     //-------
     public static final String USERS = "users";

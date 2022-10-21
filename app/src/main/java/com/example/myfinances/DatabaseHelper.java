@@ -5,9 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    public static final int VERSION = 2;
 
     public DatabaseHelper(Context context) {
-        super(context, MyConst.DATABASE_NAME, null, MyConst.VERSION);
+        super(context, MyConst.DATABASE_NAME, null, VERSION);
     }
 
     @Override
@@ -15,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE  TABLE IF NOT EXISTS " + MyConst.USERS + "(" +
                 MyConst.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                MyConst.COLUMN_LOGIN + " TEXT NOT NULL, " +
+                MyConst.COLUMN_LOGIN + " TEXT NOT NULL UNIQUE COLLATE NOCASE, " +
                 MyConst.COLUMN_NAME + " TEXT, " +
                 MyConst.COLUMN_PAROLE + " TEXT NOT NULL);");
 
@@ -41,6 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,  int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ MyConst.USERS);
+        db.execSQL("DROP TABLE IF EXISTS "+ MyConst.GOODS);
+        db.execSQL("DROP TABLE IF EXISTS "+ MyConst.STATISTICS);
         onCreate(db);
     }
 

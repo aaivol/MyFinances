@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="saving_user"
     tools:context=".SignUp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="27dp">
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="109dp">
 
         <TextView
             android:id="@+id/diary"
@@ -37,6 +38,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/diary" />
 
+        <EditText
+            android:id="@+id/ETloginS"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="70dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diary" />
+
         <TextView
             android:id="@+id/persname"
             android:layout_width="wrap_content"
@@ -50,6 +62,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username" />
 
+        <EditText
+            android:id="@+id/ETNameS"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ETloginS" />
+
         <TextView
             android:id="@+id/parole"
             android:layout_width="wrap_content"
@@ -62,6 +85,17 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/persname" />
+
+        <EditText
+            android:id="@+id/ETNumParoleS"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ETNameS" />
 
         <TextView
             android:id="@+id/parole2"
@@ -77,29 +111,7 @@
             app:layout_constraintTop_toBottomOf="@+id/parole" />
 
         <EditText
-            android:id="@+id/editTextTextUserName"
-            android:layout_width="290dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="70dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/diary" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="290dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextUserName" />
-
-        <EditText
-            android:id="@+id/editTextNumberPassword"
+            android:id="@+id/ETNumParoleS2"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
@@ -107,18 +119,18 @@
             android:inputType="numberPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS" />
 
-        <EditText
-            android:id="@+id/editTextNumberPassword2"
-            android:layout_width="290dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="60dp"
-            android:ems="10"
-            android:inputType="numberPassword"
+        <TextView
+            android:id="@+id/TVdb"
+            android:layout_width="308dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="38dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS2"
+            app:layout_constraintVertical_bias="0.475" />
 
         <Button
             android:id="@+id/button"
@@ -126,7 +138,7 @@
             android:layout_height="71dp"
             android:backgroundTint="@color/orange_button"
             android:fontFamily="@font/montserrat"
-            android:onClick="startMainActivity"
+            android:onClick="saving_user"
             android:text="@string/sign_up"
             android:textColor="@color/dark_txt"
             android:textSize="16sp"
@@ -135,7 +147,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS2" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
