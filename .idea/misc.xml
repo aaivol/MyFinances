@@ -5,10 +5,16 @@
       <map>
         <entry key="app/src/main/res/drawable/gradient_back.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_circle_finger.xml" value="0.154" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_17.xml" value="0.2815" />
+        <entry key="app/src/main/res/drawable/icon.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/icon_background.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/main_card.xml" value="0.2445" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.28547058105468753" />
+        <entry key="app/src/main/res/drawable/ombre.xml" value="0.2815" />
+        <entry key="app/src/main/res/layout/activity_buy_list.xml" value="0.2543822146216332" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.29376220703125006" />
         <entry key="app/src/main/res/layout/activity_reg.xml" value="0.3562874251497006" />
-        <entry key="app/src/main/res/layout/activity_second.xml" value="0.2543822146216332" />
+        <entry key="app/src/main/res/layout/activity_second.xml" value="0.18776386745366444" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/icon.xml" value="0.2145" />
       </map>
     </option>
   </component>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private DBManager DBManager;
     private EditText ETlogin, ETparole;
-    public static String current_user;
+    public static String current_user, currenttv;
     private static String current_parole;
+    private TextView incorrectTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         DBManager = new DBManager(this);
         ETlogin = findViewById(R.id.ETlogin);
         ETparole = findViewById(R.id.ETNumParole);
+        incorrectTV = findViewById(R.id.TVerror);
     }
 
     @Override
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startMenuActivity(View v) {
+        incorrectTV.setVisibility(View.INVISIBLE);
         List<String> resultList = DBManager.db_get_user();
 
         current_user = ETlogin.getText().toString();
@@ -46,10 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < resultList.size(); i+=2) {
             if (current_user.equals(resultList.get(i)) & (current_parole.equals(resultList.get(i + 1)))) {
+                incorrectTV.setVisibility(View.INVISIBLE);
                 Intent intent = new Intent(this, Menu.class);
                 startActivity(intent);
+                break;
+            }
+            if (i == resultList.size()-2){
+                incorrectTV.setVisibility(View.VISIBLE);
             }
         }
+
     }
 
     public void startSighUpActivity(View v) {

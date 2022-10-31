@@ -51,6 +51,8 @@ public class SignUp extends AppCompatActivity {
         parole = p.getText().toString();
         repeat_parole = rp.getText().toString();
 
+        String letters = ".*[A-Za-z].*";
+
         //for debug
         tv = findViewById(R.id.TVdb);
         //list logins
@@ -59,12 +61,24 @@ public class SignUp extends AppCompatActivity {
             tv.append(" * ");
         }
 
-        if (repeat_parole.equals(parole) & (!Objects.equals(parole, ""))) {
+        if (repeat_parole.equals(parole) & (!Objects.equals(parole, "")) & (!Objects.equals(login, "")) ) {
             DBManager.db_insert(login, name, parole);
             startMainActivity();
         }
         else if (!Objects.equals(parole, repeat_parole) & (!Objects.equals(parole, ""))){
-            tv.setText("Пароли не совпадают!!");
+            tv.setText("Пароли не совпадают!");
+        }
+        else if (login.equals("")){
+            tv.setText("Логин не может быть пустым!");
+        }
+        else if (!login.matches(letters)){
+            tv.setText("Логин должен содержать буквы!");
+        }
+        else if (login.contains(" ")){
+            tv.setText("Логин не может содержать пробелы!");
+        }
+        else if (parole.equals("")){
+            tv.setText("Придумайте пароль!");
         }
     }
 }
