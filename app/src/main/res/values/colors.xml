@@ -13,4 +13,6 @@
     <color name="orange_txt">#E1945C</color>
     <color name="orange_button">#FFBF90</color>
     <color name="dark_txt">#933D0C</color>
+    <color name="bright_orange">#E44F1F</color>
+    <color name="tender">#8f94fb</color>
 </resources>
