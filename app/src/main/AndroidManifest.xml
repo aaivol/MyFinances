@@ -14,16 +14,19 @@
         android:theme="@style/Theme.MyFinances"
         tools:targetApi="31">
         <activity
+            android:name=".DialogAdd"
+            android:exported="false" />
+        <activity
             android:name=".BuyList"
             android:exported="false"
-            android:theme="@style/Theme_bright"/>
+            android:theme="@style/Theme_bright" />
         <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".Menu"
             android:exported="false"
-            android:theme="@style/Theme_bright"/>
+            android:theme="@style/Theme_bright" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

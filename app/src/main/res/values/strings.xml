@@ -13,5 +13,17 @@
     <string name="buy_list">Список покупок</string>
     <string name="add_button">Добавить</string>
     <string name="to_buy_list">К списку покупок</string>
+    <string name="add_dialog">Добавление в список</string>
+    <string name="add_msg">Обязательно выберите категорию товара!</string>
+    <string name="close">Закрыть</string>
+    <string-array name="categories">
+        <item>Еда</item>
+        <item>Одежда</item>
+        <item>Лекарства</item>
+        <item>Техника</item>
+        <item>Путешествия</item>
+        <item>Дом</item>
+        <item>Другое</item>
+    </string-array>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula, mauris vel malesuada aliquet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula, mauris vel malesuada aliquet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula, mauris vel malesuada aliquet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula, mauris vel malesuada aliquet,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula, mauris vel malesuada aliquet,</string>
 </resources>
