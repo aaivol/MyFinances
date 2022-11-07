@@ -34,9 +34,17 @@ public class BuyList extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         DBManager.open_db();
-        for (String record: DBManager.db_get_goods()){ //для каждой записи из таблицы товаров
-            add_good(record); // функция записи имени товара в карту
+
+        String id = find_current_user_id();
+        List<String> resultList = DBManager.db_get_goods();
+
+        //берем id текущего пользователя
+        for (int i = 0; i < resultList.size(); i+=2) {
+            if (id.equals(resultList.get(i))) { //если текущий ID == ID товара
+                add_good(resultList.get(i+1)); // функция записи имени товара в карту
+            }
         }
+
     }
     @Override
     protected void onDestroy() {

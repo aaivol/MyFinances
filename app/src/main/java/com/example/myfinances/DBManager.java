@@ -62,8 +62,10 @@ public class DBManager {
                 null, null, null, null);
 
         while (cursor.moveToNext()) {
-            String record = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_NAME));
-            goodsList.add(record);
+            String goodID = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.USER_ID));
+            String goodNAME = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_NAME));
+            goodsList.add(goodID);
+            goodsList.add(goodNAME);
         }
         cursor.close();
         return goodsList;
