@@ -15,8 +15,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private DBManager DBManager;
     private EditText ETlogin, ETparole;
-    public static String current_user, currenttv;
-    private static String current_parole;
+    public static String current_user, current_parole;
     private TextView incorrectTV;
 
     @Override
@@ -52,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             if (current_user.equals(resultList.get(i)) & (current_parole.equals(resultList.get(i + 1)))) {
                 incorrectTV.setVisibility(View.INVISIBLE);
                 Intent intent = new Intent(this, Menu.class);
+                intent.putExtra("EXTRA_USER_LOGIN", current_user);
                 startActivity(intent);
                 break;
             }

@@ -1,11 +1,13 @@
 package com.example.myfinances;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 import android.content.ContentValues;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Currency;
@@ -27,7 +29,16 @@ public class DBManager {
         cv.put(MyConst.COLUMN_NAME, name);
         cv.put(MyConst.COLUMN_PAROLE, parole);
         db.insert(MyConst.USERS,null, cv);
-        Log.println(Log.INFO, "INSERTED", "HERE");
+    }
+
+    public void db_insert_good(String current_id, String name, String category){
+        ContentValues cv = new ContentValues();
+        cv.put(MyConst.USER_ID, current_id);
+        cv.put(MyConst.COLUMN_NAME, name);
+        cv.put(MyConst.COLUMN_CATEGORY, category);
+        db.insert(MyConst.GOODS,null, cv);
+        Log.println(Log.INFO, "INSERTED", "Good_INSERTED");
+        Log.println(Log.INFO, "INSERTED", name);
     }
 
     public List<String> db_check(){
@@ -44,6 +55,20 @@ public class DBManager {
         return loginList;
     }
 
+    public List<String> db_get_goods() {
+        List<String> goodsList = new ArrayList<>();
+
+        Cursor cursor = db.query(MyConst.GOODS, null, null,
+                null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            String record = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_NAME));
+            goodsList.add(record);
+        }
+        cursor.close();
+        return goodsList;
+    }
+
     public List<String> db_get_user(){
         List<String> resultList = new ArrayList<>();
 
@@ -55,6 +80,22 @@ public class DBManager {
             String parole = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_PAROLE));
             resultList.add(login);
             resultList.add(parole);
+        }
+        cursor.close();
+        return resultList;
+    }
+
+    public List<String> db_get_userID(){
+        List<String> resultList = new ArrayList<>();
+
+        Cursor cursor = db.query(MyConst.USERS, null, null,
+                null, null, null, null);
+
+        while (cursor.moveToNext()){
+            String userID = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_ID));
+            String login = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_LOGIN));
+            resultList.add(userID);
+            resultList.add(login);
         }
         cursor.close();
         return resultList;
