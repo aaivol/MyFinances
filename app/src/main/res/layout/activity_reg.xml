@@ -10,8 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="109dp">
+        tools:layout_editor_absoluteX="-206dp"
+        tools:layout_editor_absoluteY="28dp">
 
         <TextView
             android:id="@+id/diary"
@@ -122,7 +122,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS" />
 
         <TextView
-            android:id="@+id/TVdb"
+            android:id="@+id/TVmsg"
             android:layout_width="308dp"
             android:layout_height="81dp"
             android:layout_marginTop="38dp"
@@ -148,6 +148,18 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS2" />
+
+        <TextView
+            android:id="@+id/logins"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColor="#9C27B0"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/diary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

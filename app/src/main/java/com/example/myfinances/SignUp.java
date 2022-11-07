@@ -14,7 +14,7 @@ import java.util.Objects;
 public class SignUp extends AppCompatActivity {
     private DBManager DBManager;
     private EditText l, n, p, rp;
-    private TextView tv;
+    private TextView tv, tvlogins;
     private String login, name, parole, repeat_parole;
 
     @Override
@@ -54,11 +54,15 @@ public class SignUp extends AppCompatActivity {
         String letters = ".*[A-Za-z].*";
 
         //for debug
-        tv = findViewById(R.id.TVdb);
+        tvlogins = findViewById(R.id.logins);
+
+
+        tv = findViewById(R.id.TVmsg);
+
         //list logins
         for (String record1: DBManager.db_check()){
-            tv.append(record1);
-            tv.append(" * ");
+            tvlogins.append(record1);
+            tvlogins.append(" * ");
         }
 
         if (repeat_parole.equals(parole) & (!Objects.equals(parole, "")) & (!Objects.equals(login, "")) ) {

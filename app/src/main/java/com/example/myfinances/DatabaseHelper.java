@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final int VERSION = 2;
+    public static final int VERSION = 3;
 
     public DatabaseHelper(Context context) {
         super(context, MyConst.DATABASE_NAME, null, VERSION);
@@ -30,8 +30,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 MyConst.USER_ID + " INTEGER NOT NULL," +
                 MyConst.COLUMN_FOOD + " TEXT NOT NULL, " +
                 MyConst.COLUMN_MEDICAL + " TEXT NOT NULL, " +
-                MyConst.COLUMN_TECH + " TEXT NOT NULL);");
-
+                MyConst.COLUMN_TECH + " TEXT NOT NULL, " +
+                MyConst.COLUMN_HOME + " TEXT NOT NULL, " +
+                MyConst.COLUMN_TRAVEL + " TEXT NOT NULL, " +
+                MyConst.COLUMN_OTHER + " TEXT NOT NULL, " +
+                MyConst.COLUMN_GLOBAL + " TEXT NOT NULL);");
 
 
         // добавление начальных данных

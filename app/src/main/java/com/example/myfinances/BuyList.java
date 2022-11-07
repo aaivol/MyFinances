@@ -25,7 +25,7 @@ public class BuyList extends AppCompatActivity {
         builder.setMessage(R.string.add_msg);
 
         ConstraintLayout cl = (ConstraintLayout) getLayoutInflater().inflate(R.layout.activity_dialog_add, null);
-        Spinner mySpinner = (Spinner) cl.findViewById(R.id.spinner1);
+        Spinner mySpinner = (Spinner) cl.findViewById(R.id.good_category);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(BuyList.this,
                 android.R.layout.simple_spinner_item,
@@ -38,13 +38,13 @@ public class BuyList extends AppCompatActivity {
         builder.setPositiveButton(R.string.add_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //
+                //insert_to_db (EditText and Category)
             }
         });
         builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //
+                dialog.cancel();
             }
         });
 
