@@ -7,8 +7,7 @@
 
 # Please, enjoy!
 #### The Main Activity
-<img width="200" alt="Снимок экрана 2022-11-14 в 15 38 19" src="https://user-images.githubusercontent.com/100151145/201665854-25f0e3c7-3ab9-46f5-8887-e7c1df3647a2.png">
-
+<img width="300" alt="Снимок экрана 2022-11-14 в 15 38 19" src="https://user-images.githubusercontent.com/100151145/201665854-25f0e3c7-3ab9-46f5-8887-e7c1df3647a2.png">
 
 #### Sign Up
 <img width="300" alt="Снимок экрана 2022-11-14 в 15 38 57" src="https://user-images.githubusercontent.com/100151145/201665874-69e16f66-c473-4cb2-b180-a15bf33a6f0d.png">
