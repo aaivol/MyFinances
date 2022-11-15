@@ -16,4 +16,11 @@
     <color name="bright_orange">#E44F1F</color>
     <color name="tender">#8f94fb</color>
     <color name="Transparent">#00000000</color>
+    
+    <color name="pie_white">#FFFFFF</color>
+    <color name="pie_bright">#E44F1F</color>
+    <color name="pie_light">#A9F4F9</color>
+    <color name="pie_blue">#4C9DAF</color>
+    <color name="pie_soft">#F38FCA</color>
+    <color name="pie_no">#4D4E4E</color>
 </resources>

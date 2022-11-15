@@ -93,9 +93,10 @@ public class BuyList extends AppCompatActivity {
 
                 //берем стоимость из ETgprice
                 get_good_price = ETgprice.getText().toString();
-                //заносим стоимость товара в таблицу STATISTICS !!!!!!
-                //
-
+                //заносим стоимость товара в таблицу STATISTICS !
+                if (!get_good_price.equals("")){
+                    DBManager.db_update_statictics(find_current_user_id(), get_good_price, get_good_category);
+                }
 
                 //удаляем из GOODS товар
                 DBManager.db_delete_good(TV_toAlert.getText().toString());

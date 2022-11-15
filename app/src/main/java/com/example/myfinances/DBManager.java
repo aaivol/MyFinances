@@ -12,6 +12,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
+import java.util.Objects;
 
 public class DBManager {
     private Context context;
@@ -39,6 +40,42 @@ public class DBManager {
         db.insert(MyConst.GOODS,null, cv);
         Log.println(Log.INFO, "INSERTED", "Good_INSERTED");
         Log.println(Log.INFO, "INSERTED", name);
+    }
+
+    public void db_update_statictics(String current_id, String price, String category){
+        String value_to_increase;
+        ContentValues cv = new ContentValues();
+        cv.put(MyConst.USER_ID, current_id);
+
+        if (Objects.equals(category, "Еда")){
+            cv.put(MyConst.COLUMN_FOOD, price);
+        }
+
+        if (Objects.equals(category, "Лекарства")){
+            cv.put(MyConst.COLUMN_MEDICAL, price);
+        }
+
+        if (Objects.equals(category, "Техника")){
+            cv.put(MyConst.COLUMN_TECH, price);
+        }
+
+        if (Objects.equals(category, "Путешествия")){
+            cv.put(MyConst.COLUMN_TRAVEL, price);
+        }
+
+        if (Objects.equals(category, "Дом")){
+            cv.put(MyConst.COLUMN_HOME, price);
+        }
+
+        if (Objects.equals(category, "Другое")){
+            cv.put(MyConst.COLUMN_OTHER, price);
+        }
+
+        if (db_get_statictics(current_id).isEmpty()) {
+            db.insert(MyConst.STATISTICS, null, cv);
+        }
+        db.update(MyConst.STATISTICS, cv, MyConst.USER_ID + "=?", new String[]{current_id});
+        Log.println(Log.INFO, "INSERTED", category);
     }
 
     public List<String> db_check(){
@@ -69,6 +106,36 @@ public class DBManager {
         }
         cursor.close();
         return goodsList;
+    }
+
+    public List<String> db_get_statictics(String current_id) {
+        List<String> statList = new ArrayList<>();
+
+        Cursor cursor = db.query(MyConst.STATISTICS, null, null,
+                null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            String ID = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.USER_ID));
+            //какому аккаунту статистика
+            String food_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_FOOD));
+            String med_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_MEDICAL));
+            String tec_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_TECH));
+            String trav_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_TRAVEL));
+            String home_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_HOME));
+            String oth_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_OTHER));
+            //добавлять только если ID текущего совпадает с найденным
+            if (ID.equals(current_id)) {
+                statList.add(food_price);
+                statList.add(med_price);
+                statList.add(tec_price);
+                statList.add(trav_price);
+                statList.add(home_price);
+                statList.add(oth_price); //+6
+                // id = i+=7
+            }
+        }
+        cursor.close();
+        return statList;
     }
 
     public void db_delete_good(String name){
