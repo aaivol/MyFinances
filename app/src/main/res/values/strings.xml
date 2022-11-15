@@ -3,6 +3,7 @@
     <string name="finger">FingerBackground </string>
     <string name="diary">Дневник финансов</string>
     <string name="username">Логин </string>
+    <string name="welcome_messages">Hello, %1$s!</string>
     <string name="parole">Код</string>
     <string name="sign_up">Зарегистрироваться</string>
     <string name="lets_go">Вперед!</string>

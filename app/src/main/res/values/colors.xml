@@ -15,4 +15,5 @@
     <color name="dark_txt">#933D0C</color>
     <color name="bright_orange">#E44F1F</color>
     <color name="tender">#8f94fb</color>
+    <color name="Transparent">#00000000</color>
 </resources>
