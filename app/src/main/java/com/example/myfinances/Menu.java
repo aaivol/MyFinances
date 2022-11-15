@@ -91,9 +91,12 @@ public class Menu extends AppCompatActivity {
         int cur_id = Integer.parseInt(find_current_user_id());
 
         List<PieEntry> pieEntries = new ArrayList<>();
-        for (int i = 0; i < categoriesList.length; i++){
-            if (priceList[i]!=0){
-                pieEntries.add(new PieEntry(priceList[i], categoriesList[i]));
+
+        if (priceList.length != 0){
+            for (int i = 0; i < categoriesList.length; i++){
+                if (priceList[i]!=0){
+                    pieEntries.add(new PieEntry(priceList[i], categoriesList[i]));
+                }
             }
         }
 
