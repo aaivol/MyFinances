@@ -71,6 +71,28 @@ public class DBManager {
         return goodsList;
     }
 
+    public void db_delete_good(String name){
+        db.delete(MyConst.GOODS, MyConst.COLUMN_NAME + "=?", new String[]{name});
+        Log.println(Log.INFO, "DEL", "Good_DELETED");
+    }
+
+    public List<String> db_get_category(){
+        List<String> categories = new ArrayList<>();
+
+        Cursor cursor = db.query(MyConst.GOODS, null, null,
+                null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            String goodNAME = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_NAME));
+            String category = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_CATEGORY));
+            categories.add(goodNAME);
+            categories.add(category);
+        }
+        cursor.close();
+
+        return categories;
+    }
+
     public List<String> db_get_user(){
         List<String> resultList = new ArrayList<>();
 

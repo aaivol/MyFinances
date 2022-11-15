@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,10 +21,11 @@ import java.util.List;
 
 public class BuyList extends AppCompatActivity {
     private DBManager DBManager;
-    private EditText ETgname;
+    private EditText ETgname, ETgprice;
     private String get_good_name;
-    private TextView TV_good_card;
-    private static String get_good_category, get_user_id, current_user;
+    private TextView TV_good_card, TV_toAlert;
+    private View clicked_card;
+    private static String get_good_category, get_user_id, current_user, get_good_price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,8 @@ public class BuyList extends AppCompatActivity {
         super.onDestroy();
     }
 
+
+    // добавить товар в список на экране
     public void add_good(String goodname){
         LinearLayout good_card = (LinearLayout) getLayoutInflater().inflate(R.layout.good_card, null);
         TV_good_card = good_card.findViewById(R.id.tv_good_name);
@@ -64,9 +71,75 @@ public class BuyList extends AppCompatActivity {
 
         TV_good_card.setText(goodname); //записать имя товара в указанный ТВ
         goods_list.addView(good_card); //добавить карточку в лэйаут
+    }
+
+    // окно удаления товара
+    public void CreateDeleteDialog(View v){
+        TV_toAlert = v.findViewById(R.id.tv_good_name);//имя текущего товара
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(TV_toAlert.getText().toString());
+        builder.setMessage(R.string.cost_attention);
+        ConstraintLayout cl = (ConstraintLayout) getLayoutInflater().inflate(R.layout.delete_card, null);
+        ETgprice = cl.findViewById(R.id.ET_good_price);
+        builder.setView(cl);
+
+        builder.setPositiveButton(R.string.bought, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // берем категорию!!! из карточки в списке (надеюсь сробит)
+                get_good_category = get_category_from_db(TV_toAlert.getText().toString());
+                get_user_id = find_current_user_id();
+
+                //берем стоимость из ETgprice
+                get_good_price = ETgprice.getText().toString();
+                //заносим стоимость товара в таблицу STATISTICS !!!!!!
+                //
+
+
+                //удаляем из GOODS товар
+                DBManager.db_delete_good(TV_toAlert.getText().toString());
+                //перезагрузка окна
+                finish();
+                startActivity(getIntent());
+            }
+        });
+        builder.setNeutralButton(R.string.delete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //удаляем из GOODS товар
+                DBManager.db_delete_good(TV_toAlert.getText().toString());
+                //перезагрузка окна
+                finish();
+                startActivity(getIntent());
+            }
+        });
+        builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
     }
 
+    public String get_category_from_db(String name) {
+        String result="";
+        List<String> categoriesList = DBManager.db_get_category();
+
+        //берем id текущего пользователя
+        for (int i = 0; i < categoriesList.size(); i+=2) {
+            if (name.equals(categoriesList.get(i))) {
+                result = (categoriesList.get(i+1));
+            }
+        }
+        return result;
+    };
+
+    // узнать ID текущего пользователя
     public String find_current_user_id(){
         String result = "-1";
         List<String> resultList = DBManager.db_get_userID();
@@ -80,6 +153,7 @@ public class BuyList extends AppCompatActivity {
         return result;
     }
 
+    // окно добавления товара
     public void CreateAddDialog(View v){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.add_dialog);

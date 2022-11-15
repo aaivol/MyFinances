@@ -16,6 +16,11 @@
     <string name="add_dialog">Добавление в список</string>
     <string name="add_msg">Обязательно выберите категорию товара!</string>
     <string name="close">Закрыть</string>
+    <string name="bought">Купил</string>
+    <string name="byyyy">Убрать из списка покупок</string>
+    <string name="delete">Удалить из списка</string>
+    <string name="cost">Укажите примерную стоимость покупки</string>
+    <string name="cost_attention">Обязательно заполните поле если купили товар!</string>
     <string-array name="categories">
         <item>Еда</item>
         <item>Одежда</item>
