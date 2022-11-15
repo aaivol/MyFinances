@@ -13,7 +13,7 @@
 <img width="300" alt="Снимок экрана 2022-11-14 в 15 38 57" src="https://user-images.githubusercontent.com/100151145/201665874-69e16f66-c473-4cb2-b180-a15bf33a6f0d.png">
 
 #### Menu (in developing)
-<img width="300" alt="Снимок экрана 2022-11-14 в 15 39 39" src="https://user-images.githubusercontent.com/100151145/201665894-3f1c75d0-5b5b-41b2-9509-e667702c5467.png">
+<img width="300" alt="Снимок экрана 2022-11-15 в 14 24 50" src="https://user-images.githubusercontent.com/100151145/201908098-7e5a8900-f11f-4a3e-8716-4ab462e34ed1.png">
 
 #### Shopping List (in developing)
 <img width="300" alt="Снимок экрана 2022-11-14 в 15 40 05" src="https://user-images.githubusercontent.com/100151145/201665901-1d6f7335-c84d-443a-baee-776ef448b436.png">
