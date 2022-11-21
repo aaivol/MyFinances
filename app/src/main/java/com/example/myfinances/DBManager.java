@@ -44,36 +44,68 @@ public class DBManager {
 
     public void db_update_statictics(String current_id, String price, String category){
         String value_to_increase;
+        int intprice = Integer.parseInt(price);
         ContentValues cv = new ContentValues();
         cv.put(MyConst.USER_ID, current_id);
-
-        if (Objects.equals(category, "Еда")){
-            cv.put(MyConst.COLUMN_FOOD, price);
-        }
-
-        if (Objects.equals(category, "Лекарства")){
-            cv.put(MyConst.COLUMN_MEDICAL, price);
-        }
-
-        if (Objects.equals(category, "Техника")){
-            cv.put(MyConst.COLUMN_TECH, price);
-        }
-
-        if (Objects.equals(category, "Путешествия")){
-            cv.put(MyConst.COLUMN_TRAVEL, price);
-        }
-
-        if (Objects.equals(category, "Дом")){
-            cv.put(MyConst.COLUMN_HOME, price);
-        }
-
-        if (Objects.equals(category, "Другое")){
-            cv.put(MyConst.COLUMN_OTHER, price);
-        }
 
         if (db_get_statictics(current_id).isEmpty()) {
             db.insert(MyConst.STATISTICS, null, cv);
         }
+
+        if (Objects.equals(category, "Еда")){
+            if (db_get_statictics(current_id).get(0) != null){
+                value_to_increase = db_get_statictics(current_id).get(0);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_FOOD, price);
+        }
+
+        if (Objects.equals(category, "Лекарства")){
+            if (db_get_statictics(current_id).get(1) != null){
+                value_to_increase = db_get_statictics(current_id).get(1);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_MEDICAL, price);
+        }
+
+        if (Objects.equals(category, "Техника")){
+            if (db_get_statictics(current_id).get(2) != null){
+                value_to_increase = db_get_statictics(current_id).get(2);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_TECH, price);
+        }
+
+        if (Objects.equals(category, "Путешествия")){
+            if (db_get_statictics(current_id).get(3) != null){
+                value_to_increase = db_get_statictics(current_id).get(3);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_TRAVEL, price);
+        }
+
+        if (Objects.equals(category, "Дом")){
+            if (db_get_statictics(current_id).get(4) != null){
+                value_to_increase = db_get_statictics(current_id).get(4);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_HOME, price);
+        }
+
+        if (Objects.equals(category, "Другое")){
+            if (db_get_statictics(current_id).get(5) != null){
+                value_to_increase = db_get_statictics(current_id).get(5);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_OTHER, price);
+        }
+
         db.update(MyConst.STATISTICS, cv, MyConst.USER_ID + "=?", new String[]{current_id});
         Log.println(Log.INFO, "INSERTED", category);
     }
@@ -130,8 +162,8 @@ public class DBManager {
                 statList.add(tec_price);
                 statList.add(trav_price);
                 statList.add(home_price);
-                statList.add(oth_price); //+6
-                // id = i+=7
+                statList.add(oth_price); //+5
+                // id = i+=6
             }
         }
         cursor.close();
