@@ -12,9 +12,11 @@
 #### Sign Up
 <img width="300" alt="Снимок экрана 2022-11-14 в 15 38 57" src="https://user-images.githubusercontent.com/100151145/201665874-69e16f66-c473-4cb2-b180-a15bf33a6f0d.png">
 
-#### Menu (in developing)
-<img width="300" alt="Снимок экрана 2022-11-15 в 14 24 50" src="https://user-images.githubusercontent.com/100151145/201908098-7e5a8900-f11f-4a3e-8716-4ab462e34ed1.png">
+#### Menu 
+<img width="300" alt="Снимок экрана 2022-11-21 в 23 32 22" src="https://user-images.githubusercontent.com/100151145/203152838-b7fd1779-b3d3-47d0-8b48-4d034bcea53c.png">
 
-#### Shopping List (in developing)
-<img width="300" alt="Снимок экрана 2022-11-14 в 15 40 05" src="https://user-images.githubusercontent.com/100151145/201665901-1d6f7335-c84d-443a-baee-776ef448b436.png">
-<img width="300" alt="Снимок экрана 2022-11-14 в 15 40 16" src="https://user-images.githubusercontent.com/100151145/201665913-1e358dcb-0b5d-4b07-9892-af7e2e5c5562.png">
+#### Shopping List
+<img width="300" alt="Снимок экрана 2022-11-21 в 23 33 27" src="https://user-images.githubusercontent.com/100151145/203153001-51b83bd2-792b-404a-b6bc-ea1688c79cce.png">
+<img width="300" alt="Снимок экрана 2022-11-21 в 23 34 22" src="https://user-images.githubusercontent.com/100151145/203153133-1b36a95a-b66b-4d0f-aab3-f2304318c86b.png">
+<img width="300" alt="Снимок экрана 2022-11-21 в 23 34 47" src="https://user-images.githubusercontent.com/100151145/203153200-555b5ce6-2acc-4a0a-8c3c-9aab1419c8a9.png">
+
