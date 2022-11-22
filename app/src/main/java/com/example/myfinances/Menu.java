@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimatedImageDrawable;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -22,8 +28,7 @@ public class Menu extends AppCompatActivity {
     private DBManager DBManager;
     public static String current_user;
     TextView TVhello;
-    String[] months = {"February", "May", "July", "August"};
-    int[] days = {28, 31, 30, 31};
+    AnimationDrawable circle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,29 @@ public class Menu extends AppCompatActivity {
         String text = getString(R.string.welcome_messages, current_user);
         TVhello = findViewById(R.id.hello_user);
         TVhello.setText(text);
+
+
+        ImageView animated_pic = (ImageView) findViewById(R.id.imageView4);
+        animated_pic.setBackgroundResource(R.drawable.animated);
+        circle = (AnimationDrawable) animated_pic.getBackground();
+        circle.setEnterFadeDuration(2000);
+        circle.setExitFadeDuration(2000);
+
+        ImageButton sbutton = findViewById(R.id.scroll_button);
+        ScrollView main = findViewById(R.id.scrolll);
+        sbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            main.smoothScrollTo(1500, 1500);
+            }
+        });
+
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        circle.start();
     }
 
     @Override

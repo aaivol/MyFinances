@@ -9,6 +9,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     android:background="@drawable/gradient_back"
+    android:id="@+id/scrolll"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +46,7 @@
             android:id="@+id/hello_user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="32dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/diary"
@@ -53,7 +54,8 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/piechart"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lay" />
+            app:layout_constraintTop_toBottomOf="@+id/lay"
+            app:layout_constraintVertical_bias="0.364" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -70,38 +72,31 @@
             android:id="@+id/piechart"
             android:layout_width="340dp"
             android:layout_height="340dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
-        <TextView
-            android:id="@+id/textView9"
+        <ImageButton
+            android:id="@+id/scroll_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="TextView"
+            android:layout_marginTop="180dp"
+            android:background="@color/Transparent"
+            android:src="@drawable/ic_vector"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/piechart" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginBottom="200dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/montserrat"
             android:onClick="startBuyListActivity"
@@ -110,8 +105,9 @@
             android:textSize="13sp"
             app:cornerRadius="40dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/scroll_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
