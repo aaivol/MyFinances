@@ -87,12 +87,12 @@
             app:layout_constraintTop_toBottomOf="@+id/persname" />
 
         <EditText
-            android:id="@+id/ETNumParoleS"
+            android:id="@+id/ETParoleS"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
             android:ems="10"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ETNameS" />
@@ -111,15 +111,15 @@
             app:layout_constraintTop_toBottomOf="@+id/parole" />
 
         <EditText
-            android:id="@+id/ETNumParoleS2"
+            android:id="@+id/ETParoleS2"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
             android:ems="10"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS" />
+            app:layout_constraintTop_toBottomOf="@+id/ETParoleS" />
 
         <TextView
             android:id="@+id/TVmsg"
@@ -129,7 +129,7 @@
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS2"
+            app:layout_constraintTop_toBottomOf="@+id/ETParoleS2"
             app:layout_constraintVertical_bias="0.475" />
 
         <Button
@@ -147,7 +147,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETNumParoleS2" />
+            app:layout_constraintTop_toBottomOf="@+id/ETParoleS2" />
 
         <TextView
             android:id="@+id/logins"

@@ -75,7 +75,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETNumParole" />
+            app:layout_constraintTop_toBottomOf="@+id/ETParole" />
 
         <Button
             android:id="@+id/BTNsign_up"
@@ -108,12 +108,12 @@
             app:layout_constraintTop_toBottomOf="@+id/diary" />
 
         <EditText
-            android:id="@+id/ETNumParole"
+            android:id="@+id/ETParole"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="60dp"
             android:ems="10"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ETlogin" />
@@ -128,7 +128,7 @@
             app:layout_constraintBottom_toTopOf="@+id/Tsign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ETNumParole" />
+            app:layout_constraintTop_toBottomOf="@+id/ETParole" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

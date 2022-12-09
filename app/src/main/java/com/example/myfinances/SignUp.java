@@ -25,8 +25,8 @@ public class SignUp extends AppCompatActivity {
         DBManager = new DBManager(this);
         l = findViewById(R.id.ETloginS);
         n = findViewById(R.id.ETNameS);
-        p = findViewById(R.id.ETNumParoleS);
-        rp = findViewById(R.id.ETNumParoleS2);
+        p = findViewById(R.id.ETParoleS);
+        rp = findViewById(R.id.ETParoleS2);
     }
 
     @Override

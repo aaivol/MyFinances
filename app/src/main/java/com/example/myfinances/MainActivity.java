@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         DBManager = new DBManager(this);
         ETlogin = findViewById(R.id.ETlogin);
-        ETparole = findViewById(R.id.ETNumParole);
+        ETparole = findViewById(R.id.ETParole);
         incorrectTV = findViewById(R.id.TVerror);
     }
 
