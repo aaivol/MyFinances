@@ -22,6 +22,7 @@ public class MyConst {
     public static final String STATISTICS = "statistics";
     //USER_ID
     public static final String COLUMN_FOOD = "food";
+    public static final String COLUMN_TRANS = "transport";
     public static final String COLUMN_MEDICAL = "medical";
     public static final String COLUMN_TECH = "tech";
     public static final String COLUMN_TRAVEL = "travel";

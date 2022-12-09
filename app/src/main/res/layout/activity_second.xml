@@ -72,7 +72,7 @@
             android:id="@+id/piechart"
             android:layout_width="340dp"
             android:layout_height="340dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.0"

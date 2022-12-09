@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final int VERSION = 6;
+    public static final int VERSION = 7;
 
     public DatabaseHelper(Context context) {
         super(context, MyConst.DATABASE_NAME, null, VERSION);
@@ -29,6 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE  TABLE IF NOT EXISTS " + MyConst.STATISTICS + "(" +
                 MyConst.USER_ID + " INTEGER NOT NULL," +
                 MyConst.COLUMN_FOOD + " TEXT NOT NULL DEFAULT \"0\", " +
+                MyConst.COLUMN_TRANS + " TEXT NOT NULL DEFAULT \"0\", " +
                 MyConst.COLUMN_MEDICAL + " TEXT NOT NULL DEFAULT \"0\", " +
                 MyConst.COLUMN_TECH + " TEXT NOT NULL DEFAULT \"0\", " +
                 MyConst.COLUMN_HOME + " TEXT NOT NULL DEFAULT \"0\", " +

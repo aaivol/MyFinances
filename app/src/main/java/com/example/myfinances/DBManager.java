@@ -61,6 +61,15 @@ public class DBManager {
             cv.put(MyConst.COLUMN_FOOD, price);
         }
 
+        if (Objects.equals(category, "Транспорт")){
+            if (db_get_statictics(current_id).get(0) != null){
+                value_to_increase = db_get_statictics(current_id).get(0);
+                intprice += Integer.parseInt(value_to_increase);
+                price = Integer.toString(intprice);
+            }
+            cv.put(MyConst.COLUMN_TRANS, price);
+        }
+
         if (Objects.equals(category, "Лекарства")){
             if (db_get_statictics(current_id).get(1) != null){
                 value_to_increase = db_get_statictics(current_id).get(1);
@@ -150,6 +159,7 @@ public class DBManager {
             String ID = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.USER_ID));
             //какому аккаунту статистика
             String food_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_FOOD));
+            String tr_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_TRANS));
             String med_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_MEDICAL));
             String tec_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_TECH));
             String trav_price = cursor.getString(cursor.getColumnIndexOrThrow(MyConst.COLUMN_TRAVEL));
@@ -158,12 +168,13 @@ public class DBManager {
             //добавлять только если ID текущего совпадает с найденным
             if (ID.equals(current_id)) {
                 statList.add(food_price);
+                statList.add(tr_price);
                 statList.add(med_price);
                 statList.add(tec_price);
                 statList.add(trav_price);
                 statList.add(home_price);
-                statList.add(oth_price); //+5
-                // id = i+=6
+                statList.add(oth_price); //+6
+                // id = i+=7
             }
         }
         cursor.close();

@@ -24,6 +24,7 @@
     <string name="cost_attention">Обязательно заполните поле если купили товар!</string>
     <string-array name="categories">
         <item>Еда</item>
+        <item>Транспорт</item>
         <item>Лекарства</item>
         <item>Техника</item>
         <item>Путешествия</item>
