@@ -10,14 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="32dp"
-        android:hint="@string/cost"
-        android:textSize="15sp"
-        android:textColor="@color/dark_txt"
-        android:padding="15dp"
         android:background="@drawable/button_circle"
         android:backgroundTint="@color/BG"
+        android:hint="@string/cost"
+        android:padding="15dp"
+        android:textColor="@color/dark_txt"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/costerror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/cost_attention2"
+        android:textColor="@color/bright_orange"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ET_good_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,13 @@
 package com.example.myfinances;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
@@ -23,7 +25,7 @@ public class BuyList extends AppCompatActivity {
     private DBManager DBManager;
     private EditText ETgname, ETgprice;
     private String get_good_name;
-    private TextView TV_good_card, TV_toAlert;
+    private TextView TV_good_card, TV_toAlert, TV_cost;
     private View clicked_card;
     private static String get_good_category, get_user_id, current_user, get_good_price;
 
@@ -82,11 +84,14 @@ public class BuyList extends AppCompatActivity {
         builder.setMessage(R.string.cost_attention);
         ConstraintLayout cl = (ConstraintLayout) getLayoutInflater().inflate(R.layout.delete_card, null);
         ETgprice = cl.findViewById(R.id.ET_good_price);
+        TV_cost = cl.findViewById(R.id.costerror);
         builder.setView(cl);
 
         builder.setPositiveButton(R.string.bought, new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                TV_cost.setVisibility(View.INVISIBLE);
                 // берем категорию!!! из карточки в списке (надеюсь сробит)
                 get_good_category = get_category_from_db(TV_toAlert.getText().toString());
                 get_user_id = find_current_user_id();
@@ -96,13 +101,15 @@ public class BuyList extends AppCompatActivity {
                 //заносим стоимость товара в таблицу STATISTICS !
                 if (!get_good_price.equals("")){
                     DBManager.db_update_statictics(find_current_user_id(), get_good_price, get_good_category);
+                    //удаляем из GOODS товар
+                    DBManager.db_delete_good(TV_toAlert.getText().toString());
+                    //перезагрузка окна
+                    finish();
+                    startActivity(getIntent());
                 }
-
-                //удаляем из GOODS товар
-                DBManager.db_delete_good(TV_toAlert.getText().toString());
-                //перезагрузка окна
-                finish();
-                startActivity(getIntent());
+                else {
+                    ETgprice.setBackgroundColor(getColor(R.color.bright_orange));
+                }
             }
         });
         builder.setNeutralButton(R.string.delete, new DialogInterface.OnClickListener() {
@@ -181,11 +188,12 @@ public class BuyList extends AppCompatActivity {
                 get_user_id = find_current_user_id();
 
                 //заносим товар в базу данных под ID который нашли
-                DBManager.db_insert_good(get_user_id, get_good_name, get_good_category);
-
-                //тут же вписываем в активити
-                // (в след раз при открытии она запишется уже из ф-ии onResume() )
-                add_good(get_good_name);
+                if (!get_good_name.equals("")) {
+                    DBManager.db_insert_good(get_user_id, get_good_name, get_good_category);
+                    //тут же вписываем в активити
+                    // (в след раз при открытии она запишется уже из ф-ии onResume() )
+                    add_good(get_good_name);
+                }
             }
         });
         builder.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
